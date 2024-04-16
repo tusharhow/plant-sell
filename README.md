@@ -1,16 +1,6 @@
-# plant_app
+# Plant Selling App UI
 
-A new Flutter project.
+This is a plant selling app UI design made with Flutter. The design is inspired by a dribbble shot.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Demo
+https://github.com/tusharhow/plant-sell/assets/65107679/b7542975-447c-4914-9f5b-b68ba80502a3

@@ -7,7 +7,7 @@ import '../utils/themes/text_style.dart';
 import 'details_page.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class MyHomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(height: 16),
             Container(
               color: Colors.white,
               child: Column(
@@ -82,7 +83,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -107,30 +108,28 @@ class MyHomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 1.5,
-                    width: MediaQuery.of(context).size.width / 1.05,
-                    child: ListView.builder(
-                      itemCount: 5,
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => DetailsPage(
-                                          name: title[index],
-                                          image: images[index],
-                                          price: price[index],
-                                        )));
-                          },
+                  ListView.builder(
+                    itemCount: 5,
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => DetailsPage(
+                                name: title[index],
+                                image: images[index],
+                                price: price[index],
+                              ),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Container(
                             height: 100,
-                            width: MediaQuery.of(context).size.width / 1.05,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.black12,
@@ -180,15 +179,15 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ]),
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -213,31 +212,27 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 1.5,
-              width: MediaQuery.of(context).size.width / 1.05,
-              child: ListView.builder(
-                itemCount: 5,
-                reverse: true,
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                              builder: (context) => DetailsPage(
-                                    name: title[index],
-                                    image: images[index],
-                                    price: price[index],
-                                  )));
-                    },
+            ListView.builder(
+              itemCount: 5,
+              reverse: true,
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => DetailsPage(
+                                  name: title[index],
+                                  image: images[index],
+                                  price: price[index],
+                                )));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Container(
                       height: 100,
-                      width: MediaQuery.of(context).size.width / 1.05,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.black12,
@@ -287,9 +282,9 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ]),
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
             const SizedBox(
               height: 30,
